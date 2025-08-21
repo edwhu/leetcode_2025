@@ -1,4 +1,21 @@
-### Aug 19, 2025
+## Aug 20, 2025
+### [2106. Maximum Fruits Harvested After at Most K Steps](https://leetcode.com/problems/maximum-fruits-harvested-after-at-most-k-steps/description/)
+In my first attempt, I did the try everything, using the same logic as the maximum points you can obtain from cards problem. I was able to get the right answer, but it was too slow. 
+
+The problem is that if K is very large, there are K+1 strategies and I'm looping through K steps for each strategy. Instead, I think I can just remove the leftmost fruit and add the right most fruit and keep track of the total score.
+
+Spent an hour on this and got stuck, couldn't seem to get the ranges right. Will take a break and look at the solution.
+
+Ok, it seems like I had trouble coming up with the way to compute the ranges. The simplest way is:
+1. Start with [0...k] possible left steps.
+2. The remaining right steps past the start pos will be k - (2 * left_steps) since we need to double back to return to the start pos.
+
+Another thing is I forgot to account for going right first. Some reason, I thought going left and then turning back would account for the right hand side paths as well. Other small thing is I could have brute force enumerated the prefix array from 0 to 21000000.
+
+Able to finish after peaking at answer and consulting GPT a bit to clear up my doubts. 
+
+
+## Aug 19, 2025
 Started with Prefix / Postfix problems.
 
 ### [303. Range Sum Query](https://leetcode.com/problems/range-sum-query-immutable/)
